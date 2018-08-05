@@ -1,4 +1,38 @@
-.react_page {
+h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 250%;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: blue;
+  font-weight: bold;
+  border: 1px solid blue;
+  padding: 0.13rem 0.35rem;
+}
+
+label {
+  font-size: 105%;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: -1.7rem;
+}
+
+input:hover {
+  color: #007ba0;
+}
+
+input {
+  font-size: 105%;
+  font-weight: bold;
+  text-align: center;
+  color: blue;
+  border: 1px solid blue;
+  margin-bottom: 1px;
+}
+
+.red_ring {
   width: 30rem;
   margin: 1rem auto;
   padding: 1rem;
@@ -7,5 +41,19 @@
 }
 
 .container {
+  text-align: center;
+}
+
+.devise {
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.center {
   text-align: center;
 }

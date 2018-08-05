@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :gender, presence: true, inclusion: { in: %w(M F),
-    message: 'Please enter "M" or "F" in the "gender" field.' }
+    message: 'must be "M" or "F"' }
   validates :height, presence: true, numericality: true
   validates :weight, presence: true, numericality: true
 

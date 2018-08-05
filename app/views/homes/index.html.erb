@@ -1,3 +1,13 @@
-<div id='app' class='react_page'>
-
-</div>
+<%- if current_user -%>
+  <div id='app' class='devise'>
+  </div>
+  <div class='devise'>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  </div>
+<%- else -%>
+  <div class='devise'>
+    <h2>Sparring Meetup</h2>
+    <%= link_to 'Sign Up', new_user_registration_path %><br/>
+    <%= link_to 'Sign In', new_user_session_path %>
+  </div>
+<%- end -%>
