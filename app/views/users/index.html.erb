@@ -1,3 +1,21 @@
-<div id='app' class='react_page'>
+<div class='center'>
+  <h2>USERS</h2>
 
+  <%= link_to "SPARRING MEETUP HOME", root_path %><br/><br/>
+
+  <% @users.each do |user| %>
+    <div class="user_tile">
+      <span class="bold">USERNAME: </span><%= user.username %>
+      <span class="bold">EMAIL: </span><%= user.email %><br/>
+      <span class="bold">AGE: </span><%= user.age %>
+      <span class="bold">GENDER: </span><%= user.gender %><br>
+      <span class="bold">HEIGHT: </span><%= "#{user.height} in." %>
+      <span class="bold">WEIGHT: </span><%= "#{user.weight} lbs." %>
+      <% if user.reach %>
+        <span class="bold"><%= "#{user.reach} in." %><br/>
+      <% else %>
+        <span class="bold">REACH: </span>n/a<br/>
+      <% end %>
+    </div>
+  <% end %>
 </div>
