@@ -12,7 +12,7 @@ class ProposalsIndexContainer extends Component {
   render() {
     return (
       <div className='container'>
-        <h2>Sparring Proposals</h2>
+        <h2>SPARRING PROPOSALS</h2>
       </div>
     )
   }

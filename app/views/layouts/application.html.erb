@@ -12,13 +12,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='red_ring'>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
-      <div class="center"><%= value %></div>
+      <div class="flash_messages"><%= value %></div>
     </div>
   <%- end -%>
 
-  <div class='red_ring'>
     <%= yield %>
   </div>
 
