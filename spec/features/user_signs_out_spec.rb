@@ -15,19 +15,19 @@ feature 'user signs out', %Q{
 
     visit new_user_session_path
 
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'EMAIL:', with: user.email
+    fill_in 'PASSWORD:', with: user.password
 
-    click_button 'Log in'
+    click_button 'SIGN IN'
 
     expect(page).to have_content('Signed in successfully')
 
-    click_link 'Sign Out'
+    click_link 'SIGN OUT'
     expect(page).to have_content('Signed out successfully')
   end
 
   scenario 'unauthenticated user attempts to sign out' do
     visit '/'
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('SIGN OUT')
   end
 end

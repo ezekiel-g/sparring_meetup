@@ -1,2 +1,10 @@
-<div id='app'>
+<div class='center'>
+  <h2>MESSAGES</h2>
+
+  <div id='app'>
+  </div>
+
+  <%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/>
+  <%= link_to 'SPARRING MEETUP HOME', root_path %><br/>
+  <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
 </div>

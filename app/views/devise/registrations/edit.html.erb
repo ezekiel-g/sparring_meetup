@@ -65,5 +65,6 @@
 
   <%= link_to "CANCEL MY ACCOUNT", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
   <br/>
-  <%= link_to "SPARRING MEETUP HOME", root_path %>
+  <%= link_to "SPARRING MEETUP HOME", root_path %><br/>
+  <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
 </div>

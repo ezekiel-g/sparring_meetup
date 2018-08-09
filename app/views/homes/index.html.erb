@@ -1,7 +1,8 @@
 <%- if current_user -%>
-  <div id='app' class='devise'>
-  </div>
   <div class='devise'>
+    <h2>SPARRING<br/>MEETUP</h2>
+    <%= link_to 'SPARRING PROPOSALS', proposals_path %><br/>
+    <%= link_to 'MESSENGER', messages_path %><br/>
     <%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/>
     <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
   </div>
