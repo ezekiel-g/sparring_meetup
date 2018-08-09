@@ -1,2 +1,15 @@
-<div id='app'>
+<div class='center'>
+  <h2>PROPOSALS</h2>
+
+  <%= link_to 'MAKE A PROPOSAL', new_proposal_path %><br/>
+  <%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/>
+  <%= link_to 'SPARRING MEETUP HOME', root_path %>
+
+  <% @proposals.each do |proposal| %>
+    <div class='proposal'>
+      <span class='bold'>USERNAME: </span><%= proposal.user.username %>
+      <span class='bold'>SPORT: </span><%= proposal.sport.name.capitalize %><br/>
+      <span class='bold'>PROPOSAL: </span><br/><%= proposal.description %><br/>
+    </div>
+  <% end %>
 </div>

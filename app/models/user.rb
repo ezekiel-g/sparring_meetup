@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates :age, presence: true, numericality: true
   validates :gender, presence: true, inclusion: { in: %w(M F),
     message: 'must be "M" or "F"' }
   validates :height, presence: true, numericality: true

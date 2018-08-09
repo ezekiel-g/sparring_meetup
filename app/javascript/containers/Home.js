@@ -13,8 +13,6 @@ class Home extends Component {
     return (
       <div className='container'>
         <h2>SPARRING MEETUP</h2>
-        <Link to='/proposals'>SPARRING PROPOSALS</Link><br/>
-        <Link to='/messages'>MESSENGER</Link>
       </div>
     )
   }

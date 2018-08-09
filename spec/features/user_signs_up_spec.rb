@@ -15,21 +15,26 @@ feature 'user registers', %Q{
   scenario 'provide valid registration information' do
     visit new_user_registration_path
 
-    fill_in 'Email', with: 'john@example.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'USERNAME:', with: 'username'
+    fill_in 'EMAIL:', with: 'john@example.com'
+    fill_in 'PASSWORD:', with: 'password'
+    fill_in 'PASSWORD CONFIRMATION:', with: 'password'
+    fill_in 'AGE:', with: 23
+    fill_in 'GENDER ("M" OR "F"):', with: 'M'
+    fill_in 'HEIGHT IN INCHES:', with: 72
+    fill_in 'WEIGHT IN POUNDS:', with: 180
 
-    click_button 'Sign up'
+    click_button 'SIGN UP'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('Sign Out')
+    expect(page).to have_content('SIGN OUT')
   end
 
   scenario 'provide invalid registration information' do
     visit new_user_registration_path
 
-    click_button 'Sign up'
+    click_button 'SIGN UP'
     expect(page).to have_content("can't be blank")
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('SIGN OUT')
   end
 end
