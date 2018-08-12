@@ -1,4 +1,4 @@
-<div class='center'>
+<div>
   <h2>MAKE PROPOSAL</h2>
 
   <h5>THINGS YOUR PROPOSAL SHOULD INCLUDE:</h5>
@@ -14,52 +14,14 @@
     </div>
 
     <div class='field'>
-
-      <%= f.label :sport, 'SPORT:' %><br/>
+      <%= f.label :sport, "SPORT:", for: "proposal_sport_id"  %><br/>
       <%= f.select :sport_id, options_for_select(@sports.map { |s| [s.name, s.id]}) %>
-
-      <!-- <%= radio_button_tag(:sport_id, 'aikido') %>
-      <%= label_tag(:sport_id_1, 'AIKIDO') %>
-
-      <%= radio_button_tag(:sport_id, 'bjj') %>
-      <%= label_tag(:sport_id_BJJ, 'BJJ') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'boxing') %>
-      <%= label_tag(:sport_id_boxing, 'BOXING') %>
-
-      <%= radio_button_tag(:sport_id, 'jiusitsu') %>
-      <%= label_tag(:sport_id_jiujitsu, 'JIU-JITSU') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'judo') %>
-      <%= label_tag(:sport_id_judo, 'JUDO') %>
-
-      <%= radio_button_tag(:sport_id, 'karate') %>
-      <%= label_tag(:sport_id_karate, 'KARATE') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'kickboxing') %>
-      <%= label_tag(:sport_id_kickboxing, 'KICKBOXING') %>
-
-      <%= radio_button_tag(:sport_id, 'kungfu') %>
-      <%= label_tag(:sport_id_kungfu, 'KUNG FU') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'muaythai') %>
-      <%= label_tag(:sport_id_muaythai, 'MUAY THAI') %>
-
-      <%= radio_button_tag(:sport_id, 'savate') %>
-      <%= label_tag(:sport_id_savate, 'SAVATE') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'sumo') %>
-      <%= label_tag(:sport_id_sumo, 'SUMO') %>
-
-      <%= radio_button_tag(:sport_id, 'taekwondo') %>
-      <%= label_tag(:sport_id_taekwondo, 'TAEKWONDO') %><br/>
-
-      <%= radio_button_tag(:sport_id, 'wrestling') %>
-      <%= label_tag(:sport_id_wrestling, 'WRESTLING') %><br/><br/> -->
     </div>
 
-      <%= f.submit 'CREATE' %>
+      <div class='button_link'><%= f.submit 'CREATE PROPSAL' %></div>
   <% end %>
 
-  <%= link_to 'SPARRING MEETUP HOME', root_path %>
+  <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
+  <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/></div>
+  <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
 </div>

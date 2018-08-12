@@ -1,15 +1,11 @@
-<div class='center'>
+<div>
   <h2>PROPOSALS</h2>
+  <div class='button_link'><%= link_to 'MAKE A PROPOSAL', new_proposal_path %></div><br/><br/>
 
-  <%= link_to 'MAKE A PROPOSAL', new_proposal_path %><br/>
-  <%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/>
-  <%= link_to 'SPARRING MEETUP HOME', root_path %>
+  <div id='app'>
+  </div>
 
-  <% @proposals.each do |proposal| %>
-    <div class='proposal'>
-      <span class='bold'>USERNAME: </span><%= proposal.user.username %>
-      <span class='bold'>SPORT: </span><%= proposal.sport.name.capitalize %><br/>
-      <span class='bold'>PROPOSAL: </span><br/><%= proposal.description %><br/>
-    </div>
-  <% end %>
+  <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
+  <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %></div>
+  <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
 </div>

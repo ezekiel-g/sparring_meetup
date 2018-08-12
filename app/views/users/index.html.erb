@@ -1,4 +1,5 @@
-<div class='center'>
+<div>
+<%- if current_user.admin? -%>
   <h2>USERS</h2>
 
   <%= link_to "SPARRING MEETUP HOME", root_path %><br/><br/>
@@ -17,5 +18,9 @@
         <span class="bold">REACH: </span>n/a<br/>
       <% end %>
     </div>
+  <% end %>
+
+  <% else %>
+    <% flash.now[:notice] = "You are not authorized to view this page." %>
   <% end %>
 </div>

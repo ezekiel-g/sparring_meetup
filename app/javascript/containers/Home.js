@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import ProposalsIndexContainer from './ProposalsIndexContainer'
 
 class Home extends Component {
   constructor(props) {
@@ -11,8 +12,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div>
         <h2>SPARRING MEETUP</h2>
+        <ProposalsIndexContainer />
       </div>
     )
   }
