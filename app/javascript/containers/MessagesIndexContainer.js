@@ -11,7 +11,6 @@ class MessagesIndexContainer extends Component {
   render() {
     return (
       <div className='container'>
-        <h2>MESSENGER</h2>
       </div>
     )
   }

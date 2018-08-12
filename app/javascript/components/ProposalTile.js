@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class ProposalTile extends Component {
   constructor(props) {
@@ -10,7 +11,14 @@ class ProposalTile extends Component {
 
   render() {
     return (
-      <h2>This is ProposalTile</h2>
+      <div>
+        <div className='button_link'>
+          <Link to={`/proposals/${this.props.id}`}>
+            {this.props.description}
+          </Link>
+        </div>
+        <br/>
+      </div>
     )
   }
 }

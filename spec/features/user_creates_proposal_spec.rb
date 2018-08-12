@@ -6,8 +6,9 @@ feature 'user creates proposal', %Q{
   So that others can view it
 } do
 
-  scenario 'user signs in' do
+  scenario 'user creates proposal' do
     user = FactoryBot.create(:user)
+    aikido = FactoryBot.create(:sport)
 
     visit new_user_session_path
 
@@ -17,16 +18,14 @@ feature 'user creates proposal', %Q{
     click_button 'SIGN IN'
 
     expect(page).to have_content('Signed in successfully')
-  end
 
-  scenario 'user creates proposal' do
     visit new_proposal_path
 
     fill_in 'YOUR SPARRING PROPOSAL', with: 'This is a proposal.'
-    select 'aikido', from: 'SPORTS:'
+    select aikido.name, from: 'SPORT:'
 
     click_button 'CREATE'
 
-    expect(page).to have_content('Proposal created sucessfully')
+    expect(page).to have_content('MAKE A PROPOSAL')
   end
 end

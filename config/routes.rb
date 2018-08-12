@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       resources :users
       resources :proposals
       resources :messages
+      namespace :search do
+        post 'proposals/search', to: 'proposals#search'
+      end
     end
   end
 end

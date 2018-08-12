@@ -1,6 +1,5 @@
 class ProposalsController < ApplicationController
   before_action :authorize_user, except: [:index, :show, :new, :create]
-  before_action :authorize_editor, except: [:new, :create]
 
   def index
     @proposals = Proposal.all
@@ -69,15 +68,6 @@ class ProposalsController < ApplicationController
     if !user_signed_in?
       flash[:notice] = "You do not have access to this page."
       redirect_to root_path
-    end
-  end
-
-  def authorize_editor
-    if !current_user.admin?
-      if current_user != Review.find(params[:id]).user
-        flash[:notice] = "You do not have access to this page."
-        redirect_to trail_path(Trail.find(params[:trail_id]))
-      end
     end
   end
 
