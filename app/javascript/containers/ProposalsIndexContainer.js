@@ -44,12 +44,18 @@ class ProposalsIndexContainer extends Component {
           sport_id={proposal.sport_id}
           description={proposal.description}
           username={proposal.username}
+          email={proposal.email}
+          age={proposal.age}
+          gender={proposal.gender}
+          height={proposal.height}
+          weight={proposal.weight}
+          reach={proposal.reach}
         />
       )
     })
 
     return (
-      <div className='container'>
+      <div>
         <SearchBar /><br/>
       </div>
     )

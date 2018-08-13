@@ -12,8 +12,15 @@ class ProposalTile extends Component {
   render() {
 
     return (
-      <div>
-        <div className='bold'>SPARRING PROPOSAL CREATED BY {this.props.username}: </div>
+      <div className='tile'>
+        <div className='bold'>*SPARRING PROPOSAL FOR {this.props.sport}* </div>
+        <span className='bold'>USERNAME: </span>{this.props.username} {' '}
+        <span className='bold'>EMAIL: </span>{this.props.email} {' '}
+        <span className='bold'>AGE: </span>{this.props.age} {' '}
+        <span className='bold'>GENDER: </span>{this.props.gender} {' '}
+        <span className='bold'>HEIGHT: </span>{this.props.height} {' '}
+        <span className='bold'>WEIGHT: </span>{this.props.weight} {' '}
+        <span className='bold'>REACH: </span>{this.props.reach}<br/>
         "{this.props.description}"<br/>
       </div>
     )

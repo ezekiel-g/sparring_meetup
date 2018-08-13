@@ -3,12 +3,12 @@ class ProposalsController < ApplicationController
 
   def index
     @proposals = Proposal.all
+    @user_proposals = Proposal.where(user_id: current_user.id)
   end
 
   def show
-    @proposal = Proposal.find(params[:id])
-    @sport = @proposal.sport
-    @user = @proposal.user
+    @proposal = Proposal.where(user_id: current_user.id)
+    @user = current_user
   end
 
   def new
@@ -32,7 +32,6 @@ class ProposalsController < ApplicationController
 
   def edit
     @proposal = Proposal.find(params[:id])
-    @sports = Sport.all
   end
 
   def update
@@ -42,7 +41,7 @@ class ProposalsController < ApplicationController
     if current_user.id == proposal.user_id || current_user.admin?
       if proposal.update(proposal_params)
         flash[:notice] = 'Proposal updated successfully'
-        redirect_to @proposal
+        redirect_to proposals_path
       else
         flash.now[:notice] = @proposal.errors.full_messages.join(' * ')
         render :edit
@@ -51,14 +50,14 @@ class ProposalsController < ApplicationController
   end
 
   def destroy
-    @proposal = Proposal.find(params[:id])
+    proposal = Proposal.find(params[:id])
 
     if current_user.id == proposal.user_id || current_user.admin?
       proposal.destroy
       flash[:notice] = "Proposal successfully deleted"
       redirect_to root_path
     else
-      flash[:notice] = "This is not your proposal."
+      flash[:notice] = "That is not your proposal."
       redirect_to root_path
     end
   end

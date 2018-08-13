@@ -6,10 +6,21 @@
     <div id='app'>
     </div>
 
-    <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
     <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %></div>
-    <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
+    <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
+    <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div><br/>
+
+    <h5>MY PROPOSALS</h5>
+    <% if @user_proposals %>
+      <% @user_proposals.each do |proposal| %>
+        <%= proposal.description %><br/>
+        <%= link_to '(DELETE)', proposal_path(proposal),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %><br/>
+      <% end %>
+    <% end %>
   </div>
+
 <%- else -%>
-  Please go back and sign in
+   Please go back and sign in
 <%- end -%>

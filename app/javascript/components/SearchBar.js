@@ -48,10 +48,17 @@ class SearchBar extends Component {
         <ProposalTile
           key={proposal.id}
           id={proposal.id}
-          username={proposal.username}
           user_id={proposal.user_id}
           sport_id={proposal.sport_id}
           description={proposal.description}
+          sport={proposal.sport}
+          username={proposal.username}
+          email={proposal.email}
+          age={proposal.age}
+          gender={proposal.gender}
+          height={proposal.height}
+          weight={proposal.weight}
+          reach={proposal.reach}
         />
       )
     })
