@@ -2,25 +2,25 @@
 <%- if current_user.admin? -%>
   <h2>USERS</h2>
 
-  <%= link_to "SPARRING MEETUP HOME", root_path %><br/><br/>
+  <%= link_to 'SPARRING MEETUP HOME', root_path %><br/><br/>
 
   <% @users.each do |user| %>
-    <div class="user_tile">
-      <span class="bold">USERNAME: </span><%= user.username %>
-      <span class="bold">EMAIL: </span><%= user.email %><br/>
-      <span class="bold">AGE: </span><%= user.age %>
-      <span class="bold">GENDER: </span><%= user.gender %><br>
-      <span class="bold">HEIGHT: </span><%= "#{user.height} in." %>
-      <span class="bold">WEIGHT: </span><%= "#{user.weight} lbs." %>
+    <div class='tile'>
+      <span class='bold'>USERNAME: </span><%= user.username %>
+      <span class='bold'>EMAIL: </span><%= user.email %><br/>
+      <span class='bold'>AGE: </span><%= user.age %>
+      <span class='bold'>GENDER: </span><%= user.gender %><br>
+      <span class='bold'>HEIGHT: </span><%= "#{user.height} in." %>
+      <span class='bold'>WEIGHT: </span><%= "#{user.weight} lbs." %>
       <% if user.reach %>
-        <span class="bold"><%= "#{user.reach} in." %><br/>
+        <span class='bold'><%= "REACH: #{user.reach} in." %><br/>
       <% else %>
-        <span class="bold">REACH: </span>n/a<br/>
+        <span class='bold'>REACH: </span>N/A<br/>
       <% end %>
     </div>
   <% end %>
 
   <% else %>
-    <% flash.now[:notice] = "You are not authorized to view this page." %>
+    <% flash.now[:notice] = 'You are not authorized to view this page.' %>
   <% end %>
 </div>
