@@ -8,6 +8,7 @@ class ProposalsController < ApplicationController
   def show
     @proposal = Proposal.find(params[:id])
     @sport = @proposal.sport
+    @user = @proposal.user
   end
 
   def new

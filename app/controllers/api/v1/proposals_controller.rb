@@ -2,10 +2,13 @@ class Api::V1::ProposalsController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:search]
 
   def index
-    render json: Proposal.all
+    @proposals = Proposal.all
+    @users = User.all
+    render json: @proposals
   end
 
   def show
-    render json: Proposal.find(params[:id])
+    @proposal = Proposal.find(params[:id])
+    render json: @proposal
   end
 end

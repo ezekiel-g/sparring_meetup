@@ -27,7 +27,7 @@ class ProposalsIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        proposals: body
+        proposals: body.proposals
       })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -43,6 +43,7 @@ class ProposalsIndexContainer extends Component {
           user_id={proposal.user_id}
           sport_id={proposal.sport_id}
           description={proposal.description}
+          username={proposal.username}
         />
       )
     })

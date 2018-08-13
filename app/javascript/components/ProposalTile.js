@@ -10,14 +10,11 @@ class ProposalTile extends Component {
   }
 
   render() {
+
     return (
       <div>
-        <div className='button_link'>
-          <Link to={`/proposals/${this.props.id}`}>
-            {this.props.description}
-          </Link>
-        </div>
-        <br/>
+        <div className='bold'>SPARRING PROPOSAL CREATED BY {this.props.username}: </div>
+        "{this.props.description}"<br/>
       </div>
     )
   }

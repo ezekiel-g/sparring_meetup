@@ -32,7 +32,7 @@ class SearchBar extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ proposals: body, searchError: ''})
+        this.setState({ proposals: body.proposals, searchError: ''})
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     } else {
@@ -48,12 +48,14 @@ class SearchBar extends Component {
         <ProposalTile
           key={proposal.id}
           id={proposal.id}
+          username={proposal.username}
           user_id={proposal.user_id}
           sport_id={proposal.sport_id}
           description={proposal.description}
         />
       )
     })
+
 
     return (
       <div>
