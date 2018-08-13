@@ -1,10 +1,17 @@
-<div>
-  <h2>MESSAGES</h2>
+<%- if current_user -%>
+  <div>
+    <h2>MESSAGES</h2>
 
-  <div id='app'>
+    <% @chats.each do |chat| %>
+    <% end %><br/>
+
+    <div id='app'>
+    </div><br/>
+
+    <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %><br/></div>
+    <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/></div>
+    <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
   </div>
-
-  <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %><br/></div>
-  <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/></div>
-  <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
-</div>
+<%- else -%>
+  Please go back and sign in
+<%- end -%>

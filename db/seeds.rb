@@ -61,3 +61,7 @@ Sport.create!(
   name: 'wrestling',
   description: '(from Wikipedia) Wrestling is a combat sport involving grappling type techniques such as clinch fighting, throws and takedowns, joint locks, pins and other grappling holds.'
 )
+
+Chat.create!(
+  title: 'Chat'
+)
