@@ -30,7 +30,25 @@ class MessagesIndexContainer extends Component {
       }
     })
     .then((data) => {
-      this.setState({user: data})
+      this.setState({
+        user: data
+      })
+    })
+    fetch('/api/v1/messages', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then((response) => {
+      let { ok } = response;
+      if (ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      this.setState({
+        messages: data.messages
+      })
     })
     App.chatChannel = App.cable.subscriptions.create(
       // Info that is sent to the subscribed method
@@ -53,6 +71,7 @@ class MessagesIndexContainer extends Component {
   }
 
   handleMessageReceipt(message) {
+    debugger;
     this.setState({ messages: this.state.messages.concat(message) })
   }
 
@@ -79,12 +98,15 @@ class MessagesIndexContainer extends Component {
   }
 
   render() {
+
     let messages = this.state.messages.map(message => {
+
       return(
         <Message
-          key={message.messageId}
-          username={message.user[0].username}
-          message={message.message}
+          key={message.id}
+          id={message.id}
+          username={message.username}
+          message={message.body}
         />
       )
     }, this);
