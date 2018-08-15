@@ -21,11 +21,14 @@ class ChatChannel < ApplicationCable::Channel
     # chat_key = "#{Time.now.to_datetime.strftime('%Q')}-#{current_user.id}"
     chat_key = chat.id
 
+    # this info needs to match the standard message format of what is already in react state
     chat_json = {
       "chat_key": chat_key,
       "message": new_message.body,
       "messageId": new_message.id,
-      "user": data["user"]
+      "user": current_user,
+      "body": new_message.body,
+      "username": current_user.username
     }
 
     ActionCable.server.broadcast("chat_#{params[:chat_id]}", chat_json)
