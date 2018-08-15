@@ -1,19 +1,29 @@
 <%- if current_user -%>
   <div>
     <h2>PROPOSALS</h2>
-    <div class='button_link'><%= link_to 'MAKE A PROPOSAL', new_proposal_path %></div><br/><br/>
+    <%= link_to new_proposal_path do %>
+      <div class='button_link'>MAKE A PROPOSAL</div>
+    <%- end -%>
 
     <div id='app'>
     </div>
 
-    <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %></div>
-    <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
-    <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div><br/>
+    <%= link_to edit_user_registration_path do %>
+      <div class='button_link'>EDIT PROFILE</div>
+    <%- end -%>
+    <%= link_to root_path do %>
+      <div class='button_link'>SPARRING MEETUP HOME</div>
+    <%- end -%>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class='button_link'>SIGN OUT</div>
+    <%- end -%>
+
 
     <h5>MY PROPOSALS</h5>
     <% if @user_proposals %>
       <% @user_proposals.each do |proposal| %>
         <%= proposal.description %><br/>
+        <%= link_to '(EDIT)', edit_proposal_path(proposal) %>
         <%= link_to '(DELETE)', proposal_path(proposal),
           method: :delete,
           data: { confirm: 'Are you sure?' } %><br/>

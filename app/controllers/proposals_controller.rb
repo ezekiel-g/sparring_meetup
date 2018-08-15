@@ -32,14 +32,15 @@ class ProposalsController < ApplicationController
 
   def edit
     @proposal = Proposal.find(params[:id])
+    @sports = Sport.all
   end
 
   def update
     @proposal = Proposal.find(params[:id])
     @sports = Sport.all
 
-    if current_user.id == proposal.user_id || current_user.admin?
-      if proposal.update(proposal_params)
+    if current_user.id == @proposal.user_id || current_user.admin?
+      if @proposal.update(proposal_params)
         flash[:notice] = 'Proposal updated successfully'
         redirect_to proposals_path
       else

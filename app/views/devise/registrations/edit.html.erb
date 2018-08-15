@@ -58,12 +58,18 @@
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
 
-    <div class="actions">
-      <div class='button_link'><%= f.submit "UPDATE PROFILE" %></div>
+    <div class='actions center'>
+      <%= f.submit 'UPDATE PROFILE' %>
     </div>
   <% end %>
 
-  <div class='button_link'><%= link_to "CANCEL MY ACCOUNT", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></div>
-  <div class='button_link'><%= link_to "SPARRING MEETUP HOME", root_path %></div>
-  <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
+  <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
+    <div class='button_link'>CANCEL MY ACCOUNT</div>
+  <%- end -%>
+  <%= link_to root_path do %>
+    <div class='button_link'>SPARRING MEETUP HOME</div>
+  <%- end -%>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <div class='button_link'>SIGN OUT</div>
+  <%- end -%>
 </div>

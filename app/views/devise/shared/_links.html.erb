@@ -1,21 +1,31 @@
 <%- if controller_name != 'sessions' %>
-  <div class='button_link'><%= link_to "SIGN IN", new_session_path(resource_name) %></div><br />
+  <%= link_to new_session_path(resource_name) do %>
+    <div class='button_link'>SIGN IN</div>
+  <%- end -%>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <div class='button_link'><%= link_to "SIGN UP", new_registration_path(resource_name) %></div><br />
+  <%= link_to new_registration_path(resource_name) do %>
+    <div class='button_link'>SIGN UP</div>
+  <%- end -%>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <div class='button_link'><%= link_to "RETRIEVE LOST PASSWORD", new_password_path(resource_name) %></div><br />
+  <%= link_to new_password_path(resource_name) do %>
+    <div class='button_link'>RETRIEVE LOST PASSWORD</div>
+  <%- end -%>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <div class='button_link'><%= link_to "RE-SEND CONFIRMATION INSTRUCTIONS", new_confirmation_path(resource_name) %></div><br />
+  <%= link_to new_confirmation_path(resource_name) do %>
+    <div class='button_link'>RE-SEND CONFIRMATION INSTRUCTIONS</div>
+  <%- end -%>
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <div class='button_link'><%= link_to "RE-SEND UNLOCK INSTRUCTIONS", new_unlock_path(resource_name) %></div><br />
+  <%= link_to new_unlock_path(resource_name) do %>
+    <div class='button_link'>RE-SEND UNLOCK INSTRUCTIONS</div>
+  <%- end -%>
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
@@ -24,4 +34,6 @@
   <% end -%>
 <% end -%>
 
-<div class='button_link'><%= link_to "SPARRING MEETUP HOME", root_path %></div>
+<%= link_to root_path do %>
+  <div class='button_link'>SPARRING MEETUP HOME</div>
+<%- end -%>
