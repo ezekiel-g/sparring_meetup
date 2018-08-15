@@ -19,12 +19,23 @@
         <%= f.select :sport_id, options_for_select(@sports.map { |s| [s.name, s.id]}) %>
       </div>
 
-        <div class='button_link'><%= f.submit 'CREATE PROPSAL' %></div>
+      <div class='actions center'>
+        <%= f.submit 'CREATE PROPSAL' %>
+      </div>
     <% end %>
-    <div class='button_link'><%= link_to 'SEARCH PROPOSALS', proposals_path %></div>
-    <div class='button_link'><%= link_to 'SPARRING MEETUP HOME', root_path %></div>
-    <div class='button_link'><%= link_to 'EDIT PROFILE', edit_user_registration_path %><br/></div>
-    <div class='button_link'><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></div>
+
+    <%= link_to proposals_path do %>
+      <div class='button_link'>SEARCH PROPOSALS</div>
+    <%- end -%>
+    <%= link_to root_path do %>
+      <div class='button_link'>SPARRING MEETUP HOME</div>
+    <%- end -%>
+    <%= link_to edit_user_registration_path do %>
+      <div class='button_link'>EDIT PROFILE</div>
+    <%- end -%>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class='button_link'>SIGN OUT</div>
+    <%- end -%>
   </div>
 <%- else -%>
   Please go back and sign in

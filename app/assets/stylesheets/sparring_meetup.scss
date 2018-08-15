@@ -5,6 +5,8 @@
 body {
   background-image: url(asset-path('smbg003.jpg'));
   background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 h2 {
@@ -59,11 +61,13 @@ input {
 .red_ring {
   width: 30rem;
   min-height: 19rem;
+  max-height: 48rem;
   margin: 1rem auto;
   padding: 1rem;
   border: 2px solid #000000;
   border-radius: 25px;
   background-color: #FFFFFF;
+  overflow: scroll;
 }
 
 .container {
@@ -126,4 +130,8 @@ input {
   border: 1px solid #000000;
   border-radius: 10px;
   margin: 0.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }

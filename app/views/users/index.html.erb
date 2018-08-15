@@ -2,7 +2,9 @@
 <%- if current_user.admin? -%>
   <h2>USERS</h2>
 
-  <%= link_to 'SPARRING MEETUP HOME', root_path %><br/><br/>
+  <%= link_to root_path do %>
+    <div class='button_link'>SPARRING MEETUP HOME</div>
+  <%- end -%>
 
   <% @users.each do |user| %>
     <div class='tile'>
