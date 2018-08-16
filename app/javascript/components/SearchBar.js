@@ -40,8 +40,6 @@ class SearchBar extends Component {
     }
   }
 
-
-
   render() {
     const proposals = this.state.proposals.map(proposal => {
       return (
@@ -62,7 +60,6 @@ class SearchBar extends Component {
         />
       )
     })
-
 
     return (
       <div>

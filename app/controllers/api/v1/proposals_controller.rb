@@ -3,7 +3,6 @@ class Api::V1::ProposalsController < ApplicationController
 
   def index
     @proposals = Proposal.all
-    @users = User.all
     render json: @proposals
   end
 
