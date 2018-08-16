@@ -71,7 +71,6 @@ class MessagesIndexContainer extends Component {
   }
 
   handleMessageReceipt(message) {
-    debugger;
     this.setState({ messages: this.state.messages.concat(message) })
   }
 

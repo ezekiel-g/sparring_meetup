@@ -1,4 +1,4 @@
-class Sport_bg < ApplicationRecord
+class SportBg < ApplicationRecord
   validates :years, presence: true
 
   belongs_to :user

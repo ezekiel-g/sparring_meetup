@@ -9,7 +9,7 @@ const TextFieldWithSubmit = props => {
         type='text'
         value={props.content} />
       <div>
-        <input type='submit' value='Chat' />
+        <input type='submit' value='SEND' />
       </div>
     </div>
   )
