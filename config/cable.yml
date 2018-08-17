@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:d0ed635634356d4408c1effb00bc9493@hoki.redistogo.com:9247/
+  url: redis://redistogo:c6cf6d4f5dcaa72a6da2f0f8659e8af8@spinyfin.redistogo.com:9636/
   channel_prefix: sparring_meetup_production
